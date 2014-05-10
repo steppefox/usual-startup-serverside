@@ -7,7 +7,7 @@ var _ = require('lodash')
 	,	users = {}
 	,	dataUsers = {}
 	,	keys = []
-	, scope = {index:0, step:0, endCnt:[]}
+	, scope = {index:0, step:0, endCnt:[], sockets:{}}
 
 
 
@@ -24,21 +24,21 @@ exports.join = function(req,res) {
 			users[req.cookies.id] = {
 					id: req.cookies.id
 				, name: req.cookies.name
-				, socket: req.io
 				, price: 0
 				, perPrice: 0
 				, activeProject: {}
 				, data: {}
 			}
 		}
-
+		scope.sockets[req.cookies.id] = req.io
 		dataUsers[req.cookies.id] = users[req.cookies.id]
+		req.io.emit('statusWait', users[req.cookies.id])
 	}
 
 	keys = Object.keys(users)
 	if(keys.length === 3){
-		req.io.emit('statusWait', true)
-		req.io.broadcast('statusWait', true)
+		req.io.emit('start', true)
+		req.io.broadcast('start', true)
 		exports.step(req, res)
 	}
 
@@ -55,8 +55,8 @@ exports.step = function(req, res) {
 
 	player.data = {project:project, features:feature};
 
-	player.socket.emit('giftCardsMP', player.data)
-	player.socket.broadcast('giftCards', project)
+	scope.sockets[player.id].emit('giftCardsMP', player.data)
+	scope.sockets[player.id].broadcast('giftCards', project)
 
 	scope.index++;
 	scope.step++;

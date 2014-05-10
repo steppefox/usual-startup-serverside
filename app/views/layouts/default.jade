@@ -3,7 +3,7 @@ html.no-js(lang='en', ng-app='myApp')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title My AngularJS App
+    title Обычный стартап
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/bower_components/html5-boilerplate/css/normalize.css')
@@ -19,12 +19,13 @@ html.no-js(lang='en', ng-app='myApp')
     link(rel='stylesheet', href='/css/app.css?v6')
     link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
     link(rel='stylesheet', type='text/css', href='/js/owl-carousel/owl.carousel.css')
+    script(src="/socket.io/socket.io.js")
     script(src='/js/jquery-2.1.1.min.js')
     script(src='/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js')
     script(src='/js/dx/globalize.min.js')
     script(src='/js/dx/dx.phonejs.js')
     script(src='/js/owl-carousel/owl.carousel.min.js')
-  body.dx-viewport.dx-ios-stripes
+  body.dx-viewport.dx-ios-stripes(ng-controller="BaseCtrl")
     block content
     div(overlay="waitningOverlay",default="active")
       div.overlay-title
