@@ -1,6 +1,6 @@
 /* app css stylesheet */
 body,html,div,span,a{
-  color: #4d5363 !important;
+  color: #4d5363;
 }
 .menu {
   list-style: none;
@@ -147,4 +147,7 @@ a.completeStepArrow{
 }
 .projectBodyWorklineProgress{
 
+}
+.fa{
+  line-height: inherit !important;
 }
