@@ -1,2 +1,2 @@
-usual-startup-serverside
-========================
+# usualStartup
+### a Sails application

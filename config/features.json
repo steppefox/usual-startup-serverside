@@ -1,0 +1,6 @@
+[
+		{"id":1, "name":"БУМ", "worker":"Программист", "text":"info text", "feature":{"type":1, "price":2}}
+	,	{"id":2, "name":"БУМ", "worker":"Дизайнер", "text":"info text", "feature":{"type":1, "price":2}}
+	,	{"id":3, "name":"БУМ", "worker":"Менеджер", "text":"info text", "feature":{"type":1, "price":2}}
+	,	{"id":4, "name":"БУМ", "worker":"СММ", "text":"info text", "feature":{"type":1, "price":2}}
+]

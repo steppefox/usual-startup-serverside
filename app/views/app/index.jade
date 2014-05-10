@@ -1,0 +1,10 @@
+extends ../layouts/default
+block content
+	div.wait Ожидайте пожалуйста игроков
+	div.play(style="display:none;") Ура понеслась
+	div.game(style="display:none;") 
+		a.btn-next(href="#") Дальше
+
+
+block scripts
+	script(src="/js/app.js")

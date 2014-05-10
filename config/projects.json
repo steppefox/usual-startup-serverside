@@ -1,0 +1,34 @@
+[
+		{
+				"id":1
+			, "name":"Самсунг"
+			, "type":1
+			, "price":2
+			, "resurse":[{"worker_id":1, "name":"Программист", "work":2}, {"worker_id":2, "name":"Дизайнер", "work":2}]
+			, "deadline":5
+		}
+	,	{
+				"id":2
+			, "name":"Самсунг"
+			, "type":1
+			, "price":2
+			, "resurse":[{"worker_id":1, "name":"Программист", "work":2}, {"worker_id":2, "name":"Дизайнер", "work":2}]
+			, "deadline":5
+		}
+	,	{
+				"id":3
+			, "name":"Самсунг"
+			, "type":1
+			, "price":2
+			, "resurse":[{"worker_id":1, "name":"Программист", "work":2}, {"worker_id":2, "name":"Дизайнер", "work":2}]
+			, "deadline":5
+		}
+	,	{
+				"id":4
+			, "name":"Самсунг"
+			, "type":1
+			, "price":2
+			, "resurse":[{"worker_id":1, "name":"Программист", "work":2}, {"worker_id":2, "name":"Дизайнер", "work":2}]
+			, "deadline":5
+		}
+]

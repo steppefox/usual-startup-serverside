@@ -1,0 +1,7 @@
+extends ../layouts/default
+
+block content
+  form(method="POST", action="/singin")
+    input(name="name")
+    button(type="submit")
+      | GO
