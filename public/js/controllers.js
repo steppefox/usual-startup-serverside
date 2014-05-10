@@ -12,8 +12,8 @@ angularApplication.controller('MyCtrl1', function MyCtrl1($scope,GeneralData) {
   	}
 
 })
-.controller('MyCtrl2',function MyCtrl2($scope) {
-
+.controller('MyCtrl2',function MyCtrl2($scope,GeneralData) {
+	$scope.GeneralData = GeneralData;
 })
 .controller('MyCtrl3',function MyCtrl3($scope) {
 
