@@ -155,7 +155,18 @@ a.completeStepArrow{
 .usersListDirective{
   padding: 10px 10px;
 }
+.usersListDirectiveHeader{
+  color:#FFF;
+  font-size: 20px;
+  font-weight: bold;
+}
 .usersList-title{
   color: #FFF;
   font-size: 22px;
+}
+.usersList-title:hover{
+  color: #FFF;
+}
+.usersList-money, .usersList-money span{
+  color:#FFF;
 }
