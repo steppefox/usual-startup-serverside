@@ -151,3 +151,36 @@ a.completeStepArrow{
 .fa{
   line-height: inherit !important;
 }
+
+
+
+.alex-worker-cell{
+  height:50px;
+  padding-top: 14px;
+  vertical-align: middle;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.alex-worker-cell-bg_type_1{
+  background-color: #C5EB30;
+}
+
+.alex-worker-cell-bg_type_2{
+  background-color: #FD87E5;
+}
+
+.alex-worker-cell-bg_type_3{
+  background-color: #F1AF68;
+}
+
+.alex-worker-cell-bg_type_4{
+  background-color: #EA87FD;
+}
+.money-color-red{
+  color:red;
+}
+
+

@@ -15,9 +15,9 @@ html.no-js(lang='en', ng-app='myApp')
     link(rel='stylesheet', type='text/css', href='/css/dx/dx.win8.black.css')
     link(rel='stylesheet', type='text/css', href='/css/dx/dx.tizen.black.css')
     link(rel='stylesheet', type='text/css', href='/css/dx/dx.generic.light.css')
-    link(rel='stylesheet', href='css/app.css?v6')
+    link(rel='stylesheet', href='/css/app.css?v6')
     link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
-    link(rel='stylesheet', type='text/css', href='js/owl-carousel/owl.carousel.css')
+    link(rel='stylesheet', type='text/css', href='/js/owl-carousel/owl.carousel.css')
     script(src='/js/jquery-2.1.1.min.js')
     script(src='/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js')
     script(src='/js/dx/globalize.min.js')
@@ -51,16 +51,16 @@ html.no-js(lang='en', ng-app='myApp')
         .container-fluid
           .row
             .col-xs-3.lay-bottom-menu-btn
-              a(href='href')
+              a(href="#")
                 i.fa.fa-tasks
             .col-xs-3.lay-bottom-menu-btn
-              a(href='href')
+              a(href="#")
                 i.fa.fa-users
             .col-xs-3.lay-bottom-menu-btn
-              a(href='href')
+              a(href="#")
                 i.fa.fa-folder-open
             .col-xs-3.lay-bottom-menu-btn
-              a.completeStepArrow(href='href')
+              a.completeStepArrow(href="#")
                 i.fa.fa-arrow-right
       .app-body
         .app-content(ng-view)
@@ -74,5 +74,5 @@ html.no-js(lang='en', ng-app='myApp')
     script(src='/js/controllers.js')
     script(src='/js/filters.js')
     script(src='/js/directives.js')
-    script
+    script.
       DevExpress.devices.attachCss($(".dx-viewport"));
