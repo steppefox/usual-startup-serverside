@@ -170,3 +170,39 @@ a.completeStepArrow{
 .usersList-money, .usersList-money span{
   color:#FFF;
 }
+.alex-worker-cell{
+  height:50px;
+  padding-top: 14px;
+  vertical-align: middle;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.alex-worker-cell-bg_type_1{
+  background-color: #C5EB30;
+}
+
+.alex-worker-cell-bg_type_2{
+  background-color: #FD87E5;
+}
+
+.alex-worker-cell-bg_type_3{
+  background-color: #F1AF68;
+}
+
+.alex-worker-cell-bg_type_4{
+  background-color: #EA87FD;
+}
+.money-color-red{
+  color:red;
+}
+.alex-login-row{
+  height: 100%;
+}
+
+.alex-container-form-middle{
+  padding-top: 23%;
+  text-align: center;
+}

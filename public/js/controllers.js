@@ -14,4 +14,10 @@ angularApplication.controller('MyCtrl1', function MyCtrl1($scope,GeneralData) {
 })
 .controller('MyCtrl2',function MyCtrl2($scope) {
 
+})
+.controller('MyCtrl3',function MyCtrl3($scope) {
+
+})
+.controller('SidebarCtrl',function SidebarCtrl($scope,GeneralData){
+	$scope.GeneralData = GeneralData;
 });

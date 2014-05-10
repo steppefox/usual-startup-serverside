@@ -95,6 +95,12 @@ angularApplication.factory('GeneralData',function($http){
         ,money: 11
       }
     ]
+    ,featuresList:[
+        {"id":1, "name":"БУМ", "worker":"Программист", "text":"info text", "feature":{"type":1, "price":2}}
+      , {"id":2, "name":"БУМ", "worker":"Дизайнер", "text":"info text", "feature":{"type":1, "price":2}}
+      , {"id":3, "name":"БУМ", "worker":"Менеджер", "text":"info text", "feature":{"type":1, "price":2}}
+      , {"id":4, "name":"БУМ", "worker":"СММ", "text":"info text", "feature":{"type":1, "price":2}}
+    ]
   }
 
 
@@ -123,6 +129,7 @@ angularApplication.directive('reloadClick', function() {
 angularApplication.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
   $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
+  $routeProvider.when('/view3', {templateUrl: 'partials/partial3.html', controller: 'MyCtrl3'});
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 
