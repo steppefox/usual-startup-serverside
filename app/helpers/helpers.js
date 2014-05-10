@@ -43,6 +43,7 @@ exports.shuffleFeature = function() {
 	return _.shuffle(features);
 }
 
+
 function getRand(size) {
 	return Math.floor(Math.random() * (size - 0) + 0);
 }

@@ -1,37 +1,70 @@
+'use strict';
 
 
-  /**
-  *Точка входа, как бы роутинг
-  */
-  //создаём конект
-  var socket = io.connect();
-  //работаем с сокетом
-  socket.on('connect', function(res){
-  	socket.emit('join')
-  })
+// Declare app level module which depends on filters, and services
+var angularApplication = angular.module('myApp', [
+  'ngRoute',
+  'myApp.filters',
+  'myApp.services',
+  'myApp.directives',
+  'mobile-angular-ui',
+  'ngTouch'
+]);
 
-  socket.on('statusWait', function(res) {
-    console.log(res)
-  	if(res){
-  		document.querySelector('.wait').style.display = 'none'
-  		document.querySelector('.play').style.display = 'block'
-  	}
-  })
+angularApplication.factory('GeneralData',function($http){
+  var GeneralData = {
+    projectList:[{
+      title:'Помещение.kz'
+      ,img:'/img/256x256/cat_birdhouse.png'
+      ,text:'Проект о недвижимости и про недвижимость.'
+      ,price:3
+      ,worklines:[
+        {
+          title:'Разработчик'
+          ,type:1
+          ,progress:0
+          ,deadline:5
+        }
+        ,{
+          title:'SMM'
+          ,type:2
+          ,progress:0
+          ,deadline:5
+        }
+        ,{
+          title:'Дизайнер'
+          ,type:3
+          ,progress:0
+          ,deadline:2
+        },
+      ]
+    },{},{}]
+  }
+  return GeneralData;
+});
 
-  socket.on('giftCardsMP', function(res) {
-    document.querySelector('.play').style.display = 'none'
-    document.querySelector('.game').style.display = 'block'
-    console.log('++++',res)
-  })
+angularApplication.directive('eatClick', function() {
+    return function(scope, element, attrs) {
+        $(element).click(function(event) {
+            event.preventDefault();
+        });
+    }
+});
 
+angularApplication.directive('reloadClick', function() {
+    return function(scope, element, attrs) {
+        $(element).click(function(event) {
+          // event.preventDefault();
+          // window.location.href = attrs.href;
+          // window.location.reload(true);
+        });
+    }
+});
 
-  socket.on('giftCards', function(res) {
-    document.querySelector('.play').style.display = 'none'
-    document.querySelector('.game').style.display = 'block'
-    console.log('----',res)
-  })
-
-  // document.querySelector('.btn-next').addEventListener
-
+angularApplication.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
+  $routeProvider.otherwise({redirectTo: '/view1'});
+}]);
 
 

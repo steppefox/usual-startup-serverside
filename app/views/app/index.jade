@@ -1,10 +1,78 @@
-extends ../layouts/default
-block content
-	div.wait Ожидайте пожалуйста игроков
-	div.play(style="display:none;") Ура понеслась
-	div.game(style="display:none;") 
-		a.btn-next(href="#") Дальше
-
-
-block scripts
-	script(src="/js/app.js")
+html.no-js(lang='en', ng-app='myApp')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title My AngularJS App
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/bower_components/html5-boilerplate/css/normalize.css')
+    link(rel='stylesheet', href='/bower_components/html5-boilerplate/css/main.css')
+    link(rel='stylesheet', href='/js/mobile-angular-ui/css/mobile-angular-ui-base.min.css')
+    link(rel='stylesheet', href='/js/mobile-angular-ui/css/mobile-angular-ui-desktop.min.css')
+    link(rel='stylesheet', type='text/css', href='/css/dx/dx.common.css')
+    link(rel='stylesheet', type='text/css', href='/css/dx/dx.ios.default.css')
+    link(rel='stylesheet', type='text/css', href='/css/dx/dx.android.holo-dark.css')
+    link(rel='stylesheet', type='text/css', href='/css/dx/dx.win8.black.css')
+    link(rel='stylesheet', type='text/css', href='/css/dx/dx.tizen.black.css')
+    link(rel='stylesheet', type='text/css', href='/css/dx/dx.generic.light.css')
+    link(rel='stylesheet', href='css/app.css?v6')
+    link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href='js/owl-carousel/owl.carousel.css')
+    script(src='/js/jquery-2.1.1.min.js')
+    script(src='/bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js')
+    script(src='/js/dx/globalize.min.js')
+    script(src='/js/dx/dx.phonejs.js')
+    script(src='/js/owl-carousel/owl.carousel.min.js')
+  body.dx-viewport.dx-ios-stripes
+    #mainSidebar.sidebar.sidebar-left(toggleable='toggleable', parent-active-class='sidebar-left-in', data-ng-swipe-left='toggle(\'mainSidebar\')')
+      h1.app-name My App
+      .scrollable
+        .scrollable-content
+          .list-group(toggle='off', bubble='bubble', target='mainSidebar')
+            a.list-group-item(href='#/')
+              | Home
+              i.fa.fa-chevron-right.pull-right
+    .app
+      .navbar.navbar-app.navbar-absolute-top
+        .pull-left.lay-top-menu-avatar
+          img.img-responsive.img-rounded(alt='140x140', src='/img/rabit.png')
+        .pull-left.lh-50.ml-5.top-menu-player-name
+          | Эльдар Амантай
+        .pull-left.lh-50.ml-5
+          img(src='/img/coin.png', style='max-height: 30px;')
+          span.top-menu-base-money
+            | 5
+          span.money-color
+            | +5
+        .pull-right
+          a.btn.btn-default(data-ng-click='toggle(\'mainSidebar\');')
+            i.fa.fa-bars
+      .navbar.navbar-app.navbar-absolute-bottom
+        .container-fluid
+          .row
+            .col-xs-3.lay-bottom-menu-btn
+              a(href='href')
+                i.fa.fa-tasks
+            .col-xs-3.lay-bottom-menu-btn
+              a(href='href')
+                i.fa.fa-users
+            .col-xs-3.lay-bottom-menu-btn
+              a(href='href')
+                i.fa.fa-folder-open
+            .col-xs-3.lay-bottom-menu-btn
+              a.completeStepArrow(href='href')
+                i.fa.fa-arrow-right
+      .app-body
+        .app-content(ng-view)
+        
+    script(src='/bower_components/angular/angular.js')
+    script(src='/bower_components/angular-route/angular-route.js')
+    script(src='/bower_components/angular-touch/angular-touch.js')
+    script(src='/js/mobile-angular-ui/js/mobile-angular-ui.min.js')
+    script(src='/js/app.js')
+    script(src='/js/services.js')
+    script(src='/js/controllers.js')
+    script(src='/js/filters.js')
+    script(src='/js/directives.js')
+    script
+      DevExpress.devices.attachCss($(".dx-viewport"));

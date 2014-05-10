@@ -9,6 +9,8 @@ var application = require('../app/controllers/app')
 module.exports = function (app, passport) {
 
     app.io.route('join', application.join)
+    app.io.route('step', application.step)
+    app.io.route('endStep', application.endStep)
     app.io.route('disconnect', application.disconnect)
 
 

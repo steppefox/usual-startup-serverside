@@ -5,8 +5,9 @@ var _ = require('lodash')
 	,	features = require('../../config/features.json')
 	,	helpers = require('../helpers/helpers.js')
 	,	users = {}
+	,	dataUsers = {}
 	,	keys = []
-	, current = {index:0}
+	, scope = {index:0, step:0, endCnt:[]}
 
 
 
@@ -16,31 +17,38 @@ exports.index = function (req, res) {
 
 
 exports.join = function(req,res) {
-
 	if(!users[req.cookies.id]){
-		users[req.cookies.id] = {
-				id: req.cookies.id
-			, name: req.cookies.name
-			, socket: req.io
+		if(dataUsers[req.cookies.id]){
+			users[req.cookies.id] = dataUsers[req.cookies.id]
+		}else{
+			users[req.cookies.id] = {
+					id: req.cookies.id
+				, name: req.cookies.name
+				, socket: req.io
+				, price: 0
+				, perPrice: 0
+				, activeProject: {}
+				, data: {}
+			}
 		}
+
+		dataUsers[req.cookies.id] = users[req.cookies.id]
 	}
 
 	keys = Object.keys(users)
-	console.log(current.index)
 	if(keys.length === 3){
 		req.io.emit('statusWait', true)
 		req.io.broadcast('statusWait', true)
-		exports.step(req,res)
+		exports.step(req, res)
 	}
 
-	// if(keys.length > 3){
-	// 	return true;
-	// }
+	if(keys.length > 3){
+		return false;
+	}
 }
 
-exports.step = function(req, res, fromJoin) {
-	// console.log(current.index)
-	var player = users[keys[current.index]]
+exports.step = function(req, res) {
+	var player = users[keys[scope.index]]
 	
 	project = helpers.getOneProjectAndRemove()
 	feature = helpers.getTwoFeaturesAndRemove()
@@ -50,9 +58,18 @@ exports.step = function(req, res, fromJoin) {
 	player.socket.emit('giftCardsMP', player.data)
 	player.socket.broadcast('giftCards', project)
 
-	current.index++;
-	if(current.index > keys.length){
-		current.index = 0
+	scope.index++;
+	scope.step++;
+	if(scope.index > (keys.length-1)){
+		scope.index = 0
+	}
+}
+
+exports.endStep = function(req, res) {
+	scope.endCnt.push(req.cookies.id)
+	if(scope.endCnt.length === 3){
+		scope.endCnt = []
+		exports.step(req, res)
 	}
 }
 

@@ -1,0 +1,150 @@
+/* app css stylesheet */
+body,html,div,span,a{
+  color: #4d5363 !important;
+}
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.has-navbar-top .app-body {
+  padding-top: 51px;
+}
+.has-navbar-bottom .app-body {
+  padding-bottom: 41px;
+}
+.navbar-app {
+  min-height: 51px;
+}
+.navbar-app.navbar-absolute-top{
+  max-height: 51px;
+}
+.navbar-app.navbar-absolute-bottom{
+  min-height: 41px;
+
+}
+.navbar-app.navbar-absolute-bottom i.fa{
+  font-size:21px;
+}
+.navbar-app.navbar-absolute-bottom .btn, .navbar-app.navbar-absolute-bottom .btn-navbar {
+  line-height: 40px;
+}
+.lay-bottom-menu-btn{
+  text-align: center;
+  line-height: 40px;
+}
+.lay-top-menu-avatar img{
+  max-height: 50px;
+}
+.lh-50{
+  line-height: 50px;
+}
+.ml-5{
+  margin-left: 5px;
+}
+.ml-6{
+  margin-left: 6px;
+}
+.ml-7{
+  margin-left: 7px;
+}
+.ml-8{
+  margin-left: 8px;
+}
+.ml-9{
+  margin-left: 9px;
+}
+.ml-10{
+  margin-left: 10px;
+}
+.top-menu-player-name{
+  color: #7CB6BE;
+}
+.top-menu-base-money{
+  color: #7CB6BE;
+  font-size:16px;
+  font-weight: bold;
+}
+.money-color{
+  color: #8CD54A;
+}
+
+.carousel .item {
+  color: #444;
+  background: #f4f4f4;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}
+.projectCarousel{
+  height:100%;
+  padding: 20px 0;
+  background: #f7f7f7;
+}
+
+.projectItem{
+  width:100%;
+  height:100%;
+  margin:0 auto;
+  background: #f7f7f7; //f7f7f7
+}
+.owl-wrapper-outer, .owl-wrapper, .owl-item{
+  height:100%;
+}
+.projectHiddenCarousel{
+  display:none;
+}
+.h100{
+  height:100%;
+}
+a.completeStepArrow{
+  color: rgb(93, 207, 93) !important;
+}
+.projectHeaderTitle{
+  font-size: 20px;
+  font-weight: bold;
+}
+.projectBody{
+  padding: 10px 0;
+}
+.projectBody .fa-wrench{
+  color:rgb(54, 54, 121);
+}
+.projectBody .fa-comment-o{
+  color:purple;
+}
+.projectBody .fa-crop{
+  color:rgb(61, 153, 68);
+}
+
+.projectBodyWorklineIcon{
+  margin-right:5px;
+}
+.projectBodyWorklineTitle{
+  margin-right:5px;
+}
+.projectBodyWorklineProgress{
+
+}
