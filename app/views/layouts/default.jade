@@ -27,6 +27,11 @@ html.no-js(lang='en', ng-app='myApp')
     script(src='/js/owl-carousel/owl.carousel.min.js')
   body.dx-viewport.dx-ios-stripes(ng-controller="BaseCtrl")
     block content
+    div(overlay="waitningOverlay",default="active")
+      div.overlay-title
+        i.fa.fa-spinner.fa-spin(style="margin-right:20px;")
+        |Ожидаем загрузки других игроков...
+
 block scripts
   script(src='/bower_components/angular/angular.js')
   script(src='/bower_components/angular-route/angular-route.js')
