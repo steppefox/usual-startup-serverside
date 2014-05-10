@@ -62,4 +62,23 @@ directive('appVersion', ['version', function(version) {
 	  		})	;
 	 	}
 	}
+}).directive('usersListDirective', function() {
+    return {
+        restrict:'A'
+    	,scope:{
+    		items:'=items'
+    	}
+    	, template: ''
+				+'<div class="usersListDirective">'
+					+'<ul>'
+						+'<li data-ng-repeat="item in items">'
+							+'<span data-ng-bind="item.title" class="usersList-title"></span>'
+						+'</li>'
+					+'</ul>'
+				+'</div>'
+    		+''
+        , link: function ($scope, element, attrs) {
+
+        }
+    }
 });

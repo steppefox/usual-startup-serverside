@@ -151,3 +151,11 @@ a.completeStepArrow{
 .fa{
   line-height: inherit !important;
 }
+
+.usersListDirective{
+  padding: 10px 10px;
+}
+.usersList-title{
+  color: #FFF;
+  font-size: 22px;
+}

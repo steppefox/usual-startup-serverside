@@ -11,13 +11,17 @@ var angularApplication = angular.module('myApp', [
   'ngTouch'
 ]);
 
+angularApplication.controller('sideBarCtrl',function($scope,GeneralData){
+  $scope.GeneralData = GeneralData;
+
+});
 angularApplication.factory('GeneralData',function($http){
   var GeneralData = {
     projectList:[{
       title:'Помещение.kz'
       ,img:'/img/256x256/cat_birdhouse.png'
       ,text:'Проект о недвижимости и про недвижимость.'
-      ,price:3
+      ,price:4
       ,worklines:[
         {
           title:'Разработчик'
@@ -38,8 +42,63 @@ angularApplication.factory('GeneralData',function($http){
           ,deadline:2
         },
       ]
-    },{},{}]
+    },
+    {
+      title:'Сланцы.kz'
+      ,img:'/img/256x256/cat_skull.png'
+      ,text:'Выложи, купи, продай и убегай!'
+      ,price:2
+      ,worklines:[
+        {
+          title:'Разработчик'
+          ,type:1
+          ,progress:0
+          ,deadline:1
+        }
+        ,{
+          title:'SMM'
+          ,type:2
+          ,progress:0
+          ,deadline:1
+        }
+      ]
+    },
+    {
+      title:'Синематограф.kz'
+      ,img:'/img/256x256/cat_wizard.png'
+      ,text:'Киноиндустрия и расписание фильмов в Армане - это магия!'
+      ,price:1
+      ,worklines:[
+        {
+          title:'SMM'
+          ,type:2
+          ,progress:0
+          ,deadline:5
+        }
+        ,{
+          title:'Дизайнер'
+          ,type:3
+          ,progress:0
+          ,deadline:5
+        },
+      ]
+    }]
+    ,usersList:[
+      {
+        id:'123'
+        ,title:'Лёша'
+        ,money: 17
+      }
+      ,{
+        id:'321'
+        ,title:'Дастан'
+        ,money: 11
+      }
+    ]
   }
+
+
+
   return GeneralData;
 });
 
