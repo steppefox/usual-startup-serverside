@@ -1,7 +1,13 @@
 extends ../layouts/default
 
 block content
-  form(method="POST", action="/singin")
-    input(name="name")
-    button(type="submit")
-      | GO
+  .h100
+    .h100
+      .projectItem
+        .row.alex-login-row
+          .col-xs-12.alex-container-form-middle
+            form(action='/singin', method="POST")
+              .form-group
+                input#name(type='text', name='name', placeholder="name")
+                button.dx-button-success(type="submit") GO
+      .projectCarousel

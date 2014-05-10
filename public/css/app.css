@@ -182,5 +182,11 @@ a.completeStepArrow{
 .money-color-red{
   color:red;
 }
+.alex-login-row{
+  height: 100%;
+}
 
-
+.alex-container-form-middle{
+  padding-top: 23%;
+  text-align: center;
+}
