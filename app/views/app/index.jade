@@ -9,8 +9,8 @@ block content
     .navbar.navbar-app.navbar-absolute-top
       .pull-left.lay-top-menu-avatar
         img.img-responsive.img-rounded(alt='140x140', src='/img/rabit.png')
-      .pull-left.lh-50.ml-5.top-menu-player-name
-        | Эльдар Амантай
+      .pull-left.lh-50.ml-5.top-menu-player-name(data-ng-bind="user.name")
+        | 
       .pull-left.lh-50.ml-5
         img(src='/img/coin.png', style='max-height: 30px;')
         span.top-menu-base-money
